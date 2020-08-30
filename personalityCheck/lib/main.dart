@@ -4,11 +4,20 @@ void main() {
   runApp(PersonalityCheckApp());
 }
 
-class PersonalityCheckApp extends StatelessWidget {
+class PersonalityCheckApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return PersonalityCheckAppState();
+  }
+}
+
+class PersonalityCheckAppState extends State<PersonalityCheckApp> {
   var questionIndex = 0;
   void answerQuestion() {
     print('Answer Chosen');
-    questionIndex = questionIndex + 1;
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
   }
 
   @override
